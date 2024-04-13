@@ -38,47 +38,6 @@ app.use("/", router);
 const PORT = process.env.PORT || 8080;
 const Pass = process.env.Pass;
 //listen
-app.listen(PORT, () => {
-  console.log(
-    `Node Server Running In ${process.env.DEV_MODE} ModeOn Port ${process.env.PORT}`
-      .bgBlue.white
-  );
-});
 
-const contactEmail = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: "vanshgoel104203@gmail.com",
-    pass: Pass,
-  },
-});
 
-contactEmail.verify((error) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Ready to Send");
-  }
-});
-const email= ["8720163@gecnilokheri.ac.in"]
-router.post("/contact", (req, res) => {
- // const name = req.body.name;
-  //const email = req.body.email;
-   
-  const message = req.body.message; 
-  const mail = {  
-    from: "vanshgoel104203@gmail.com",
-    bcc: email,
-    subject: "BLOOD DONATION CAMP",
-    html: `
-           <p><h3>${message}</h3></p>
-           `,
-  };
-  contactEmail.sendMail(mail, (error) => {
-    if (error) {
-      res.json({ status: "ERROR" });
-    } else {
-      res.json({ status: "Message Sent" });
-    }
-  });
-});
+
