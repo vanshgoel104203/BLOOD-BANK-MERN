@@ -19,7 +19,7 @@ const app = express();
 //middlewares
 app.use(express.json());
 app.use(cors({
-  origin: ["https://blood-bank-mern-front.vercel.app/"],
+  origin: ["https://blood-bank-mern-front.vercel.app"],
   method:["POST" , "GET"],
   credentials:true
   
