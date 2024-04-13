@@ -6,7 +6,7 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const router = express.Router();
 const nodemailer = require("nodemailer");
-const path = require("path");
+
 //dot config
 dotenv.config();
 
@@ -15,10 +15,7 @@ connectDB();
 
 //rest object
 const app = express();
-app.get("/", (req, res) => {
-  app.use(express.static(path.resolve(__dirname, "client", "build")));
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
+
 //middlewares
 app.use(express.json());
 app.use(cors({
