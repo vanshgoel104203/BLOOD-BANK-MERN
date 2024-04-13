@@ -36,7 +36,7 @@ app.use("/api/v1/admin", require("./routes/adminRoutes"));
 app.use("/", router);
 //port
 
-const Pass = process.env.Pass;
+
 //listen
 
 
