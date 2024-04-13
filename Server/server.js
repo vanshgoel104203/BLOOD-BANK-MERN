@@ -21,7 +21,12 @@ app.get("/", (req, res) => {
   });
 //middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: [],
+  method:["POST" , "GET"],
+  credentials:true;
+  
+}));
 app.use(morgan("dev"));
 
 //routes
