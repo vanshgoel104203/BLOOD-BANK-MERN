@@ -35,7 +35,7 @@ app.use("/api/v1/analytics", require("./routes/analyticsRoutes"));
 app.use("/api/v1/admin", require("./routes/adminRoutes"));
 app.use("/", router);
 //port
-const PORT = process.env.PORT || 8080;
+
 const Pass = process.env.Pass;
 //listen
 
