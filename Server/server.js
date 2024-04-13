@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors({
   origin: ["https://blood-bank-mern-front.vercel.app/"],
   method:["POST" , "GET"],
-  credentials:true;
+  credentials:true
   
 }));
 app.use(morgan("dev"));
