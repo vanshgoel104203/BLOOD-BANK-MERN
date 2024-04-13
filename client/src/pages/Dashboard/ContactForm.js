@@ -13,7 +13,7 @@ const ContactForm = () => {
     //  email: email.value,
       message: message.value,
     };
-    let response = await fetch("http://localhost:8080/contact", {
+    let response = await fetch(`${window.location.origin}/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
