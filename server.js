@@ -15,18 +15,17 @@ connectDB();
 
 //rest object
 const app = express();
-app.get("/", (req, res) => {
-  app.use(express.static(path.resolve(__dirname, "client", "build")));
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+
+  app.use(express.static(path.join(__dirname, "./client/build")));
+  app.get('*',function(req, res){
+
+    res.sendFile(path.join(__dirname,'./client/build/index.html'))
   });
+ 
+  
 //middlewares
 app.use(express.json());
-app.use(cors({
-  origin: [https://blood-bank-mern-front.vercel.app/],
-  method:["POST" , "GET"],
-  credentials:true;
-  
-}));
+app.use(cors());
 app.use(morgan("dev"));
 
 //routes
