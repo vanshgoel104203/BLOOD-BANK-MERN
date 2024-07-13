@@ -40,7 +40,7 @@ app.use("/", router);
 const PORT = process.env.PORT || 8080;
 const Pass = process.env.Pass;
 //listen
-app.listen("https://blood-bank-mern-mu.vercel.app", () => {
+app.listen(PORT, () => {
   console.log(
     `Node Server Running In ${process.env.DEV_MODE} ModeOn Port ${process.env.PORT}`
       .bgBlue.white
