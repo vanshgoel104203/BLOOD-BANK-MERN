@@ -7,12 +7,15 @@ const connectDB = require("./config/db");
 const router = express.Router();
 const nodemailer = require("nodemailer");
 const path = require("path");
+import {fileURLToPath} from 'url';
 //dot config
+
 dotenv.config();
 
 //mongodb connection
 connectDB();
-
+const __filename= fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 //rest object
 const app = express();
 
